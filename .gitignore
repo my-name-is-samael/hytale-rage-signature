@@ -1,0 +1,19 @@
+build
+.gradle
+gradle
+local-repo/com/hypixel/hytale/HytaleServer-parent/1.0-SNAPSHOT/HytaleServer-parent-1.0-SNAPSHOT.jar
+server
+gradle-*-bin.zip
+
+### IntelliJ IDEA ###
+.idea
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/libraries/
+*.iws
+*.iml
+*.ipr
+
+### Mac OS ###
+.DS_Store

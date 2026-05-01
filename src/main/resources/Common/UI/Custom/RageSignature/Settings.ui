@@ -1,0 +1,89 @@
+$C = "../Common.ui";
+
+@NumberSetting = Group {
+    @TextLabel = "";
+    @TextDescription = "";
+    @TextSuffix = "";
+    @Min = 0;
+    @Max = 0;
+    LayoutMode: Top;
+
+    Label {
+        Text: @TextLabel;
+        Anchor: (Bottom: -10);
+        Style: (
+            TextColor: #b4c8c9,
+            FontName: "Secondary",
+            RenderBold: true
+        );
+    }
+    Group {
+        LayoutMode: Left;
+        Anchor: (Top: 20);
+        $C.@Slider #Slider {
+            @Anchor = (Width: 400);
+            Value: 0;
+            Min: @Min;
+            Max: @Max;
+            Step: 1;
+        }
+        NumberField #Field {
+            @Value = 0;
+            @Min = @Min;
+            @Max = @Max;
+            Anchor: (Left: 5, Width: 35);
+        }
+        Label { Text: @TextSuffix; }
+    }
+    Label {
+        Text: @TextDescription;
+        Anchor: (Bottom: 20);
+        Style: (
+            TextColor: #cccccc,
+            FontName: "Default"
+        );
+    }
+};
+
+$C.@PageOverlay {}
+
+$C.@DecoratedContainer {
+    @CloseButton = true;
+    Anchor: (Width: 500, Height: 370);
+
+    #Title {
+        $C.@Title {
+            @Text = %ragesignature.ui.title;
+        }
+    }
+
+    #Content {
+        LayoutMode: Top;
+
+        @NumberSetting #Delay {
+            @TextLabel = %ragesignature.ui.delay.title;
+            @TextDescription = %ragesignature.ui.delay.desc;
+            @TextSuffix = %ragesignature.ui.second;
+            @Min = 2;
+            @Max = 60;
+        }
+
+        @NumberSetting #Decay {
+            @TextLabel = %ragesignature.ui.decay.title;
+            @TextDescription = %ragesignature.ui.decay.desc;
+            @TextSuffix = "%";
+            @Min = 1;
+            @Max = 100;
+        }
+
+        @NumberSetting #Ratio {
+            @TextLabel = %ragesignature.ui.ratio.title;
+            @TextDescription = %ragesignature.ui.ratio.desc;
+            @TextSuffix = "%";
+            @Min = 1;
+            @Max = 1000;
+        }
+    }
+}
+
+$C.@BackButton {}
