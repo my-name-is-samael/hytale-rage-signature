@@ -1,4 +1,4 @@
-package com.tontonsamael.RageSignature.event;
+package com.tontonsamael.ragesignature.event;
 
 import com.hypixel.hytale.protocol.InteractionType;
 import com.hypixel.hytale.protocol.Packet;
@@ -6,7 +6,7 @@ import com.hypixel.hytale.protocol.packets.interaction.SyncInteractionChain;
 import com.hypixel.hytale.protocol.packets.interaction.SyncInteractionChains;
 import com.hypixel.hytale.server.core.io.adapter.PlayerPacketWatcher;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
-import com.tontonsamael.RageSignature.services.RageService;
+import com.tontonsamael.ragesignature.services.RageService;
 
 import javax.annotation.Nonnull;
 

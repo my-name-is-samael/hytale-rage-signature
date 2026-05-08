@@ -6,12 +6,12 @@ import com.hypixel.hytale.server.core.io.adapter.PacketFilter;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.util.Config;
-import com.tontonsamael.RageSignature.commands.SettingsCommand;
-import com.tontonsamael.RageSignature.config.RageConfig;
-import com.tontonsamael.RageSignature.event.PacketHandler;
-import com.tontonsamael.RageSignature.systems.RageHitListener;
-import com.tontonsamael.RageSignature.systems.RageInitListener;
-import com.tontonsamael.RageSignature.systems.RageTickSystem;
+import com.tontonsamael.ragesignature.commands.SettingsCommand;
+import com.tontonsamael.ragesignature.config.RageConfig;
+import com.tontonsamael.ragesignature.event.PacketHandler;
+import com.tontonsamael.ragesignature.systems.RageHitListener;
+import com.tontonsamael.ragesignature.systems.RageInitListener;
+import com.tontonsamael.ragesignature.systems.RageTickSystems;
 
 import javax.annotation.Nonnull;
 
@@ -35,13 +35,14 @@ public class RageSignature extends JavaPlugin {
 
         this.getCommandRegistry().registerCommand(new SettingsCommand());
 
-        this.getEntityStoreRegistry().registerSystem(new RageTickSystem());
+        this.getEntityStoreRegistry().registerSystem(new RageTickSystems.PlayerSecond());
+        this.getEntityStoreRegistry().registerSystem(new RageTickSystems.PotionDetection());
         PacketHandler handler = new PacketHandler();
         inboundFilter = PacketAdapters.registerInbound(handler);
         this.getEntityStoreRegistry().registerSystem(new RageInitListener());
         this.getEntityStoreRegistry().registerSystem(new RageHitListener());
 
-        LOGGER.atInfo().log("Prototype is loaded !");
+        LOGGER.atInfo().log("RageSignature is loaded !");
     }
 
     @Override

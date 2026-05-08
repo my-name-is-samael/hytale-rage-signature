@@ -1,4 +1,4 @@
-package com.tontonsamael.RageSignature.systems;
+package com.tontonsamael.ragesignature.systems;
 
 import com.hypixel.hytale.component.AddReason;
 import com.hypixel.hytale.component.Holder;
@@ -10,7 +10,7 @@ import com.hypixel.hytale.logger.HytaleLogger;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.tontonsamael.RageSignature.services.RageService;
+import com.tontonsamael.ragesignature.services.RageService;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 public class RageInitListener extends HolderSystem<EntityStore> {

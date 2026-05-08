@@ -1,4 +1,4 @@
-package com.tontonsamael.RageSignature.ui;
+package com.tontonsamael.ragesignature.ui;
 
 import com.hypixel.hytale.codec.Codec;
 import com.hypixel.hytale.codec.KeyedCodec;
@@ -19,7 +19,7 @@ import com.hypixel.hytale.server.core.ui.builder.UIEventBuilder;
 import com.hypixel.hytale.server.core.universe.PlayerRef;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import com.tontonsamael.RageSignature;
-import com.tontonsamael.RageSignature.config.RageConfig;
+import com.tontonsamael.ragesignature.config.RageConfig;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 import javax.annotation.Nonnull;

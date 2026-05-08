@@ -1,4 +1,4 @@
-package com.tontonsamael.RageSignature.services;
+package com.tontonsamael.ragesignature.services;
 
 import com.hypixel.hytale.component.Ref;
 import com.hypixel.hytale.component.Store;
@@ -95,13 +95,17 @@ public class RageService {
         }
     }
 
-    public void onHitEntity(Player player) {
+    public void addEnergy(Player player, float ratio) {
         if (player.getReference() == null) return;
         float energy = playersEnergy.computeIfAbsent(player.getDisplayName(), k -> 0f);
-        energy = Math.clamp(energy + getHitStep(player), 0f, 1f);
+        energy = Math.clamp(energy + ratio, 0f, 1f);
         playersEnergy.put(player.getDisplayName(), energy);
         setRage(player.getReference(), player.getReference().getStore(), energy);
         playersHitSkip.put(player.getDisplayName(), RageSignature.get().getConfig().getDelay());
+    }
+
+    public void onHitEntity(Player player) {
+        addEnergy(player, getHitStep(player));
     }
 
     private float getSignatureEnergy(@Nonnull Ref<EntityStore> entityRef, @Nonnull Store<EntityStore> store) {

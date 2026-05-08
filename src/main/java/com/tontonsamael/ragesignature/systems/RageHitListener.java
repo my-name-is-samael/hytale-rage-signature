@@ -1,4 +1,4 @@
-package com.tontonsamael.RageSignature.systems;
+package com.tontonsamael.ragesignature.systems;
 
 import com.hypixel.hytale.component.*;
 import com.hypixel.hytale.component.query.Query;
@@ -6,7 +6,7 @@ import com.hypixel.hytale.component.system.EntityEventSystem;
 import com.hypixel.hytale.server.core.entity.entities.Player;
 import com.hypixel.hytale.server.core.modules.entity.damage.Damage;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
-import com.tontonsamael.RageSignature.services.RageService;
+import com.tontonsamael.ragesignature.services.RageService;
 import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
 
 public class RageHitListener extends EntityEventSystem<EntityStore, Damage> {
